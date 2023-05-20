@@ -1,7 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
-const codeToExecute = decodeURIComponent(urlParams.get('run'));
+const codeToExecute = urlParams.get('run');
 
-const linesOfCode = codeToExecute.split("%OA");
+var linesOfCode = codeToExecute.split("%OA");
+linesOfCode.forEach((line, i) => {
+  linesOfCode[i] = decodeURIComponent(line)
+})
 
 try {
   linesOfCode.forEach((line) => {
