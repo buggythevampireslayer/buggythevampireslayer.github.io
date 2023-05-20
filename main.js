@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const codeToExecute = urlParams.get('run');
 
-var linesOfCode = codeToExecute.split("%OA");
+var linesOfCode = codeToExecute.split(";");
 linesOfCode.forEach((line, i) => {
   linesOfCode[i] = decodeURIComponent(line)
 })
