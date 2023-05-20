@@ -6,4 +6,5 @@ try {
 } catch (error) {
   result = "Error: " + toString(error)
 }
-document.getElementById("returnspan").innerHTML = result;
+
+document.getElementById("return_span").innerHTML = result;
