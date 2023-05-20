@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const codeToExecute = urlParams.get('run');
-var result = null;
+var result = "";
 try {
   result = Function(codeToExecute);
 } catch (error) {
