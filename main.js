@@ -5,7 +5,7 @@ const linesOfCode = codeToExecute.split("%OA");
 
 try {
   linesOfCode.forEach((line) => {
-    const result = Function(line)();
+    const result = eval(line);
     document.getElementById("return_span").innerHTML += toString(result);
   });
 } catch (error) {
