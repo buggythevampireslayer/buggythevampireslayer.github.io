@@ -9,5 +9,7 @@ try {
     document.getElementById("return_span").innerHTML += toString(result);
   });
 } catch (error) {
-  const result = error;
+  const result = toString(error);
+  console.log("Caught Error")
+  document.getElementById("return_span").innerHTML = result;
 }
