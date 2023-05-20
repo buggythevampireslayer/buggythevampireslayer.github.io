@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const codeToExecute = urlParams.get('run');
 var result = " ";
 try {
-  result = Function(codeToExecute);
+  result = toString(Function(codeToExecute));
 } catch (error) {
   result = "Error: " + toString(error)
 }
