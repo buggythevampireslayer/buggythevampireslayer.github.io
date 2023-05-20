@@ -1,11 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 const codeToExecute = decodeURIComponent(urlParams.get('run')).replace(";","\n");
 
-console.log(codeToExecute)
 
 try {
-  a = new Function(codeToExecute)
-  const result = a();
+  functionToRun = new Function(codeToExecute)
+  const result = functionToRun();
   document.getElementById("return_span").innerHTML += toString(result);
 }
 catch (error) {
