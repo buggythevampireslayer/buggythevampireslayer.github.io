@@ -14,5 +14,6 @@ try {
 } catch (error) {
   const result = toString(error);
   console.log("Caught Error")
+  console.log(error)
   document.getElementById("return_span").innerHTML = result;
 }
