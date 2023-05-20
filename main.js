@@ -2,7 +2,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const codeToExecute = urlParams.get('run');
 var result = " ";
 try {
-  result = toString(Function(codeToExecute));
+  result = eval(codeToExecute);
+  result = toString(result);
+  if (result == "[object Undefined]") {
+    result == "Error: Object Undefined"
+  }
 } catch (error) {
   result = "Error: " + toString(error)
 }
