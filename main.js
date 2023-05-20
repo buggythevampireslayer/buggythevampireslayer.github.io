@@ -1,7 +1,13 @@
 const urlParams = new URLSearchParams(window.location.search);
 const codeToExecute = decodeURIComponent(urlParams.get('run'));
-console.log(urlParams);
 
-const result = eval(codeToExecute)
+const linesOfCode = codeToExecute.split("%OA");
 
-document.getElementById("return_span").innerHTML = toString(result);
+try {
+  linesOfCode.forEach((line) => {
+    const result = Function(line)();
+    document.getElementById("return_span").innerHTML += toString(result);
+  });
+} catch (error) {
+  const result = error;
+}
