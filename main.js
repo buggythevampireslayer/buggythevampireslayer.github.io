@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
-const codeToExecute = decodeURIComponent(urlParams.get('run'));
-codeToExecute.replace(";","\n")
+const codeToExecute = decodeURIComponent(urlParams.get('run')).replace(";","\n");
+
 console.log(codeToExecute)
 
 try {
