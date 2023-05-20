@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-const codeToExecute = decodeURIComponent(urlParams.get('run')).replace(";","\n");
+const codeToExecute = decodeURIComponent(urlParams.get('run'));
 
 
 try {
